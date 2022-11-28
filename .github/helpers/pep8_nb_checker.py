@@ -81,7 +81,7 @@ with open(nb_file) as nf:
                         line = line[:-1] + noqa_comment
                     elif (noqa_comment and not line.startswith('#')
                             and line != '\n'):
-                        line += noqa_comment
+                        line += noqa_comment[:-1]
 
                     cf.write(line)
                 cf.write('\n' * buffer_lines)
